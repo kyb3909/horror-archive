@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="촛불을 든 방문자와 산사를 걸으며 범죄 기록, 크립티드, SCP 창작의 서가를 찾는 공포 아카이브 시험판.">
+<meta name="theme-color" content="#090a09">
+<link rel="icon" href="data:,">
+<title>공포 아카이브 · 산문</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+<link href="assets/site.css" rel="stylesheet">
+<script src="assets/world.js" defer></script>
+<script src="assets/posts.js" defer></script>
+<script src="assets/archive.js" defer></script>
+<script src="assets/flashlight.js" defer></script>
+<script src="assets/sound.js" defer></script>
+<script src="assets/art-manifest.js" defer></script>
+<script src="assets/creatures.js" defer></script>
+<script src="assets/clips.js" defer></script>
+<script src="assets/bugs.js" defer></script>
+<script src="assets/haunt.js" defer></script>
+<script src="assets/walk.js" defer></script>
+<noscript><style>#experience,#map-button{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#directory">전각 안내로 건너뛰기</a>
+<header class="site-header"><a class="brand" href="?s=gate" data-route>공포 아카이브</a><button id="menu-toggle" aria-expanded="false" aria-controls="main-menu">메뉴</button><nav id="main-menu" aria-label="주 메뉴"><button id="menu-close">닫기</button><div id="place-menu"></div><div class="menu-tools"><div class="search-wrap"><label for="post-search">검색</label><input id="post-search" type="search" placeholder="글·서가·지역 찾기" role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list" autocomplete="off"><div id="search-results" role="listbox" hidden></div></div><button id="map-button" aria-haspopup="dialog" aria-controls="mandala">지도</button><div class="settings-wrap"><button id="haunt-button" aria-expanded="false" aria-controls="haunt-settings">설정</button></div></div></nav></header>
+<main>
+<aside id="haunt-notice" hidden>이 사이트에는 갑자기 놀라게 하는 장면이 있습니다. 소리가 납니다. 「공포 강도」에서 줄이거나 끌 수 있습니다. <button type="button" id="notice-close">닫기</button></aside>
+<div id="experience">
+<div class="journey"><nav id="breadcrumbs" aria-label="지나온 길"></nav><p>문을 누르면 걸어갑니다. 같은 문을 다시 누르면 바로 도착합니다.</p></div>
+<section class="stage" id="stage" aria-labelledby="scene-title" aria-describedby="scene-description">
+<img class="scene-art" id="scene-art" alt="">
+<div class="placeholder-light" aria-hidden="true"></div>
+<h1 id="scene-title" tabindex="-1">산문</h1>
+<div id="exits" role="group" aria-label="장면 속 출구"></div>
+<div class="visitor" id="visitor" aria-hidden="true"><div class="candle-glow"></div><div class="body"><span class="silhouette"><i></i></span><img id="visitor-image" alt=""></div></div>
+<svg id="debug-paths" viewBox="0 0 1536 1024" aria-hidden="true"></svg>
+<p id="message" role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+<nav id="exit-buttons" aria-label="현재 장소의 출구"></nav>
+<p id="scene-description" class="description"></p>
+<section id="shelves" class="content" aria-labelledby="shelf-title" hidden><p class="eyebrow">기록실 / ARCHIVE</p><h2 id="shelf-title"></h2><nav id="shelf-tabs" class="shelf-tabs" aria-label="서가 선택"></nav><div id="post-list" aria-live="polite"></div></section>
+</div>
+<article id="reader" hidden></article><section id="wayfinding" class="content"></section>
+<noscript><div class="content"><h1>공포 아카이브</h1><p>자바스크립트가 꺼져 있어 모든 전각을 이어 보여 드립니다. 문이나 전각 안내의 링크로 이동할 수 있습니다.</p></div><section class="fallback-scene" id="fallback-gate"><div class="stage "><img class="scene-art" src="assets/img/temple-gate.webp" alt="젖은 돌계단 끝, 기록을 지키는 산사의 첫 문."><h2>산문</h2><a class="exit at" style="--x:960;--y:300;--w:370;--h:310" href="?s=hall#fallback-hall"><span>계단 위 일주문 · 법당</span></a></div><div class="content"><p>젖은 돌계단 끝, 기록을 지키는 산사의 첫 문.</p><p><a href="?s=hall#fallback-hall">계단 위 일주문 · 법당</a></p></div></section>
+<section class="fallback-scene" id="fallback-hall"><div class="stage "><img class="scene-art" src="assets/img/temple-hall.webp" alt="꺼지지 않은 불단. 세 기록실로 이어지는 갈림길."><h2>법당</h2><a class="exit at" style="--x:497;--y:340;--w:163;--h:390" href="?s=myeongbu#fallback-myeongbu"><span>왼쪽 옆문 · 명부전</span></a><a class="exit at" style="--x:1335;--y:335;--w:169;--h:425" href="?s=sansin#fallback-sansin"><span>오른쪽 옆문 · 산신각</span></a><a class="exit at" style="--x:1040;--y:610;--w:245;--h:190" href="?s=cave#fallback-cave"><span>불단 뒤 계단 · 지하 동굴</span></a><a class="exit at" style="--x:470;--y:970;--w:650;--h:54" href="?s=gate#fallback-gate"><span>돌아 나가기 · 산문</span></a></div><div class="content"><p>꺼지지 않은 불단. 세 기록실로 이어지는 갈림길.</p><p><a href="?s=myeongbu#fallback-myeongbu">왼쪽 옆문 · 명부전</a></p><p><a href="?s=sansin#fallback-sansin">오른쪽 옆문 · 산신각</a></p><p><a href="?s=cave#fallback-cave">불단 뒤 계단 · 지하 동굴</a></p><p><a href="?s=gate#fallback-gate">돌아 나가기 · 산문</a></p></div></section>
+<section class="fallback-scene" id="fallback-cave"><div class="stage "><img class="scene-art" src="assets/img/cave-candle.webp" alt="촛농과 물소리의 자리. 쇠문 너머에 마지막 기록실이 있다."><h2>지하 동굴</h2><a class="exit at" style="--x:125;--y:265;--w:225;--h:330" href="?s=lab#fallback-lab"><span>왼쪽 쇠문 복도 · 지하 실험실</span></a><a class="exit at" style="--x:475;--y:0;--w:315;--h:125" href="?s=hall#fallback-hall"><span>꺼진 마루 계단 · 법당</span></a></div><div class="content"><p>촛농과 물소리의 자리. 쇠문 너머에 마지막 기록실이 있다.</p><p><a href="?s=lab#fallback-lab">왼쪽 쇠문 복도 · 지하 실험실</a></p><p>더 깊은 굴 · 아직 열리지 않았다</p><p>무언가 빠져나간 우리 · 아직 열리지 않았다</p><p><a href="?s=hall#fallback-hall">꺼진 마루 계단 · 법당</a></p></div></section>
+<section class="fallback-scene" id="fallback-myeongbu"><div class="stage placeholder"><div class="placeholder-light"></div><h2>명부전</h2><a class="exit at" style="--x:450;--y:960;--w:636;--h:64" href="?s=hall#fallback-hall"><span>돌아 나가기 · 법당</span></a></div><div class="content"><p>범죄와 연쇄살인 기록. 확인된 사실과 남은 질문을 구분하는 서가.</p><p><a href="?s=hall#fallback-hall">돌아 나가기 · 법당</a></p><h3>연쇄살인</h3><p>아직 비어 있는 서가</p><h3>미제 사건</h3><p>아직 비어 있는 서가</p><h3>실종</h3><p>아직 꽂힌 기록이 없습니다.</p><h3>재판 기록</h3><p>아직 꽂힌 기록이 없습니다.</p></div></section>
+<section class="fallback-scene" id="fallback-sansin"><div class="stage placeholder"><div class="placeholder-light"></div><h2>산신각</h2><a class="exit at" style="--x:450;--y:960;--w:636;--h:64" href="?s=hall#fallback-hall"><span>돌아 나가기 · 법당</span></a></div><div class="content"><p>크립티드와 목격담, 민담 속 짐승을 구분하여 읽는 기록실.</p><p><a href="?s=hall#fallback-hall">돌아 나가기 · 법당</a></p><h3>크립티드</h3><p>아직 비어 있는 서가</p><h3>목격담</h3><p>아직 비어 있는 서가</p><h3>민담 속 짐승</h3><p>아직 꽂힌 기록이 없습니다.</p></div></section>
+<section class="fallback-scene" id="fallback-lab"><div class="stage placeholder"><div class="placeholder-light"></div><h2>지하 실험실</h2><a class="exit at" style="--x:450;--y:960;--w:636;--h:64" href="?s=cave#fallback-cave"><span>돌아 나가기 · 지하 동굴</span></a></div><div class="content"><p>SCP 문서 읽기와 격리 등급, 창작 기록을 위한 서가.</p><p><a href="?s=cave#fallback-cave">돌아 나가기 · 지하 동굴</a></p><h3>SCP 문서 읽기</h3><p>아직 비어 있는 서가</p><h3>격리 등급</h3><p>아직 꽂힌 기록이 없습니다.</p><h3>창작 기록</h3><p>아직 비어 있는 서가</p></div></section></noscript>
+<section class="content" id="directory" aria-labelledby="directory-title"><p class="eyebrow">여섯 개의 자리</p><h2 id="directory-title">전각 안내</h2><ul class="directory"><li><a href="?s=gate#fallback-gate" data-travel="gate">산문</a><p>젖은 돌계단 끝, 기록을 지키는 산사의 첫 문.</p><small>서가: 전각 사이를 잇는 길</small></li>
+<li><a href="?s=hall#fallback-hall" data-travel="hall">법당</a><p>꺼지지 않은 불단. 세 기록실로 이어지는 갈림길.</p><small>서가: 전각 사이를 잇는 길</small></li>
+<li><a href="?s=cave#fallback-cave" data-travel="cave">지하 동굴</a><p>촛농과 물소리의 자리. 쇠문 너머에 마지막 기록실이 있다.</p><small>서가: 전각 사이를 잇는 길</small></li>
+<li><a href="?s=myeongbu#fallback-myeongbu" data-travel="myeongbu">명부전</a><p>범죄와 연쇄살인 기록. 확인된 사실과 남은 질문을 구분하는 서가.</p><small>서가: 연쇄살인 · 미제 사건 · 실종 · 재판 기록</small></li>
+<li><a href="?s=sansin#fallback-sansin" data-travel="sansin">산신각</a><p>크립티드와 목격담, 민담 속 짐승을 구분하여 읽는 기록실.</p><small>서가: 크립티드 · 목격담 · 민담 속 짐승</small></li>
+<li><a href="?s=lab#fallback-lab" data-travel="lab">지하 실험실</a><p>SCP 문서 읽기와 격리 등급, 창작 기록을 위한 서가.</p><small>서가: SCP 문서 읽기 · 격리 등급 · 창작 기록</small></li></ul></section>
+</main>
+
+<button id="sound-button" type="button" aria-pressed="true">소리 끄기</button>
+
+<section hidden id="haunt-settings" aria-labelledby="haunt-title"><h2 id="haunt-title">공포 강도</h2><fieldset><legend>연출 강도</legend><label><input type="radio" name="intensity" value="low"> 약</label> <label><input type="radio" name="intensity" value="medium" checked> 중</label> <label><input type="radio" name="intensity" value="high"> 강</label> <label><input type="radio" name="intensity" value="off"> 끄기</label></fieldset><p><label><input id="haunt-gentle" type="checkbox"> 저자극 모드</label></p><p><label><input id="haunt-no-bugs" type="checkbox"> 벌레 끄기</label></p><p id="motion-note">저자극에서는 원혼과 환영이 천천히 나타나며 돌진·큰 점프는 꺼집니다. 벌레는 별도로 끌 수 있습니다.</p><button type="button" id="haunt-close">닫기</button></section>
+<dialog id="mandala" aria-labelledby="map-title"><div class="map-heading"><h2 id="map-title">만다라 지도</h2><button id="map-close" type="button">닫기</button></div><p class="map-legend">밝은 불: 지금 있는 곳 · 작은 불: 가 본 곳 · 꺼진 불: 미방문</p>
+<svg class="mandala-art" viewBox="0 0 480 460" aria-hidden="true"><g class="rings"><circle cx="240" cy="240" r="65"/><circle cx="240" cy="240" r="115"/><circle cx="240" cy="240" r="150"/><circle cx="240" cy="240" r="200"/><path d="M240 40V390 M90 240H390 M240 90L390 240 240 390 90 240Z M134 134L346 134 346 346 134 346Z"/><path d="M240 125Q135 135 125 240Q135 345 240 355Q345 345 355 240Q345 135 240 125Z"/></g><g class="map-connections"><path d="M240 390V240H90 M240 240H390 M240 240V125V40"/></g><g id="map-nodes"></g></svg>
+<ul id="map-links" aria-label="전각으로 빠른 이동"></ul></dialog>
+<output id="debug-coordinates" hidden>그림을 누르면 원본 픽셀 좌표가 표시됩니다.</output>
+<footer>공포 아카이브 · 시험판<br>가상의 산사에서 기록을 준비하고 있습니다. 각 기록의 발행 상태와 확인한 자료를 함께 살펴보세요.</footer>
+</body>
+</html>
